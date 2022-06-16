@@ -1,48 +1,125 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - Web</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" />
+	<link rel="stylesheet" href="~/css/custom-style.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Web</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+	@*<header class="header">
+			<img src="~/images/logo.png" alt="logo car" width="170" height="100">
+			<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+				<a href="#home">Начало</a>
+				<a href="service.html">Услуги</a>
+				<a href="#products">Каталог</a>
+				<a href="#categories">Запази час</a>
+				<a href="#review">Контакти</a>
+			</nav>
+			<div class="icons">
+				<div class="fas fa-bars" id="menu-btn"></div>
+				<div class="fas fa-search" id="search-btn"></div>
+				<div class="fas fa-shopping-cart" id="cart-btn"></div>
+				<div class="fas fa-user" id="login-btn"></div>
+			</div>
+			<div class="shopping-cart">
+				<div class="box">
+					<h3>Продукти</h3>
+				</div>
+				<a href="#" class="btn">Плащане</a>
+			</div>
+		</header>*@
+	<header>
+		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+			<div class="container">
+				<img class="float-left" src="~/images/logo.png" alt="logo car" width="170" height="100">
+				<div class="float-right">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+							aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+						<ul class="navbar-nav flex-grow-1" style="font-size: 16px;">
+							<li class="nav-item navbar-link">
+								<a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Начало</a>
+							</li>
+							<li class="nav-item navbar-link">
+								<a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Услуги</a>
+							</li>
+							<li class="nav-item navbar-link">
+								<a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Каталог</a>
+							</li>
+							<li class="nav-item navbar-link">
+								<a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Запази час</a>
+							</li>
+							<li class="nav-item navbar-link">
+								<a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Контакти</a>
+							</li>
+							<li class="nav-item ico">
+								<div class="fas fa-bars" id="menu-btn"></div>
+							</li>
+							<li class="nav-item ico">
+								<div class="fas fa-search" id="search-btn"></div>
+							</li>
+							<li class="nav-item ico">
+								<div class="fas fa-shopping-cart" id="cart-btn"></div>
+							</li>
+							<li class="nav-item ico">
+								<div class="fas fa-user" id="login-btn"></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div class="container">
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+	</div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+	<footer class="border-top footer text-muted">
+		<div class="container">
+				<div class="col-3">
+					<img src="images/logo.png" alt="logo car" width="150" height="120">
+					<p>Последвай ни в социалните мрежи.</p>
+					<div class="share">
+						<a href="#" class="fab fa-facebook-f"></a>
+						<a href="#" class="fab fa-twitter"></a>
+						<a href="#" class="fab fa-instagram"></a>
+						<a href="#" class="fab fa-linkedin"></a>
+					</div>
+				</div>
+				<div class="col-3">
+					<h3>Работно време</h3>
+					<p>
+						<i class="fas fa-arrow-right"></i> Понеделник: 8:00ч. - 19:00ч.<br />
+						<i class="fas fa-arrow-right"></i> Вторник: 8:00ч. - 19:00ч.<br />
+						<i class="fas fa-arrow-right"></i> Сряда: 8:00ч. - 19:00ч.<br />
+						<i class="fas fa-arrow-right"></i> Четвъртък: 8:00ч. - 19:00ч. <br />
+						<i class="fas fa-arrow-right"></i> Петък: 8:00ч. - 19:00ч.<br />
+						<i class="fas fa-arrow-right"></i> Събота: 10:00ч. - 17:00ч.<br />
+						<i class="fas fa-arrow-right"></i> Неделя: Почивен ден<br />
+					</p>
+				</div>
+				<div class="col-3">
+					<h3>Контакти</h3>
+					<a href="#" class="links"> <i class="fas fa-phone"></i> +359 885 1234 123 </a><br />
+					<a href="#" class="links"> <i class="fas fa-phone"></i> +359 885 1234 123 </a><br />
+					<a href="#" class="links"> <i class="fas fa-envelope"></i> autoservice@gmail.com </a><br />
+					<a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> бул. „Цар Борис III-ти Обединител“ 128 </a>
+				</div>
+			</div>
+		<div class="credit"> Дипломна <span> работа </span> юли | 2022 г. </div>
+	</footer>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/js/custom-script.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
