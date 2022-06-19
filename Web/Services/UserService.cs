@@ -24,6 +24,7 @@ namespace Web.Services
 				if (this._dbContext.Users.FirstOrDefault(x => x.Email == email).Password == password)
 				{
 					Logged.User = this._dbContext.Users.FirstOrDefault(x => x.Email == email);
+					Logged.Cart = new System.Collections.Generic.List<Service>();
 				}
 				else
 				{
@@ -42,6 +43,8 @@ namespace Web.Services
 			{
 				this._dbContext.Users.Add(user);
 				this._dbContext.SaveChanges();
+				Logged.User = user;
+				Logged.Cart = new System.Collections.Generic.List<Service>();
 				return user;
 			}
 

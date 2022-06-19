@@ -84,7 +84,7 @@ namespace Web.Controllers
 
 					try
 					{
-						Logged.User = this._userService.Register(user);
+						this._userService.Register(user);
 					}
 					catch
 					{
