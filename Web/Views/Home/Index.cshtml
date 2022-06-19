@@ -9,8 +9,8 @@
 		<div class="row gy-3">
 			@foreach (Service service in service.GetServices())
 			{
-				<div class="col-4 align-self-center align-items-center">
-					<a>
+				<div class="col-4 align-self-center align-items-center pb-3">
+					<a asp-action="Open" asp-controller="Product" asp-route-id="@service.Id" style="color: black; text-decoration: none;">
 						<div class="card" style="height: 40vh">
 							<img class="img-fluid" src="~/@service.PhotoPath" style="height: 30vh" alt="Card image cap">
 							<div class="card-body text-center gy-3">

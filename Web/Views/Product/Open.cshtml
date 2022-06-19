@@ -1,0 +1,30 @@
+﻿@model Service
+
+<div class="container open-sans">
+	<div class="row mb-3">
+		<div class="col-md-6">
+			<h2 class="mt-5 bold">@Model.Name</h2>
+		</div>
+		<div class="col-md-3">
+			<h3 class="mt-5">
+				Цена: @Model.Price лв.
+			</h3>
+		</div>
+		<div class="col-md-3">
+			<a asp-action="AddToCart" asp-controller="Product" asp-route-id="@Model.Id">
+				<button class="btn btn-warning mt-5">
+					Добави към количка
+				</button>
+			</a>
+		</div>
+	</div>
+	<hr />
+	<div class="row">
+		<div class="col-md-12">
+			<h5 style="white-space: pre-line">
+				@Model.Description
+			</h5>
+			<img class="img-fluid" src="~/@Model.PhotoPath" />
+		</div>
+	</div>
+</div>
