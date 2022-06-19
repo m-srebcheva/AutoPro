@@ -27,6 +27,8 @@ namespace DataAccess
 
 		public DbSet<User> Users { get; set; }
 
+		public DbSet<Order> Orders { get; set; }
+
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Appointment>(entity =>
@@ -50,6 +52,10 @@ namespace DataAccess
 				entity.HasOne(e => e.User)
 					.WithMany(a => a.Appointments)
 					.HasForeignKey(e => e.UserId);
+
+				entity.HasOne(e => e.Order)
+					.WithMany(o => o.Appointments)
+					.HasForeignKey(e => e.OrderId);
 			});
 
 			modelBuilder.Entity<Brand>(entity =>
@@ -83,6 +89,10 @@ namespace DataAccess
 
 				entity.Property(e => e.Description);
 
+				entity.Property(e => e.ShortDescription);
+
+				entity.Property(e => e.PhotoPath);
+
 				entity.Property(e => e.Price);
 			});
 
@@ -108,6 +118,11 @@ namespace DataAccess
 				entity.Property(e => e.PhoneNumber);
 
 				entity.Property(e => e.Role);
+			});
+
+			modelBuilder.Entity<Order>(entity =>
+			{
+				entity.HasKey(e => e.Id);
 			});
 		}
 	}

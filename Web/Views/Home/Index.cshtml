@@ -1,8 +1,60 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@inject ProductService service
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+	<div class="jumbotron-fluid" style="background-image: url(../images/car.jpg); background-size: cover; background-repeat: no-repeat; height: 30vh;">
+	</div>
+	<div class="container">
+		<div class="row text-center p-5 align-items-center justify-content-center">
+			<h1>Най-популярни</h1>
+		</div>
+		<div class="row gy-3">
+			@foreach (Service service in service.GetServices())
+			{
+				<div class="col-4 align-self-center align-items-center">
+					<a>
+						<div class="card" style="height: 40vh">
+							<img class="img-fluid" src="~/@service.PhotoPath" style="height: 30vh" alt="Card image cap">
+							<div class="card-body text-center gy-3">
+								<h3 class="card-title">@service.Name</h3>
+							</div>
+						</div>
+					</a>
+				</div>
+			}
+		</div>
+
+	</div>
+
+	<!-- home section -->
+	<!--<section class="popular" id="popular">
+
+		<h1 class="heading">Популярни</h1>
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-3">
+
+					<h3>Чип тунинг</h3>
+					<img class="img-fluid" src="images/chip-tuning.jpeg" alt="">
+					<p>Chip Tuning представлява в своята основа промяна на оригиналния софтуер на автомобила,в софтуера управляващ двигателя има редица параметри които се модифицират за да се получи качествения тунинг.</p>
+					<a href="#" class="btn">Прочети повече</a>
+				</div>
+
+				<div class="col-3">
+					<h3>Премахване на EGR клапан</h3>
+					<img class="img-thumbnail" src="images/egr.jpg" alt="">
+					<p>Рециркулация на изгорелите газове.</p>
+					<a href="#" class="btn">Прочети повече</a>
+				</div>
+
+				<div class="col-3">
+					<img class="img-thumbnail" src="images/kodirane.jpeg" alt="">
+					<h3>Кодиране и програмиране</h3>
+					<p>Предлагаме освен стандартната диагностика,Програмиране и Кодиране на екстри за немски автомобили‼️</p>
+					<a href="#" class="btn">Прочети повече</a>
+				</div>
+			</div>
+
+		</div>
+
+	</section>-->
