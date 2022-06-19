@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Web.Services;
 
 namespace Web
 {
@@ -26,7 +27,7 @@ namespace Web
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllersWithViews();
-
+			services.AddTransient<ProductService>();
 			services.AddDbContext<AutoProDbContext>(options =>
 				options.UseSqlServer(Configuration.GetConnectionString("Connection")));
 		}

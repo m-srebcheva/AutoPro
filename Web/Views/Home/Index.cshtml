@@ -1,67 +1,60 @@
-﻿<div class="row gy-3">
-	<div class="col align-self-center align-items-center">
-		<div class="card" style="width: 25rem;">
-			<img class="card-img-top" src="~/images/car.jpg" alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				<a href="#" class="btn btn-primary">Go somewhere</a>
-			</div>
-		</div>
-	</div>
-	<div class="col">
-		<div class="card" style="width: 25rem;">
-			<img class="card-img-top" src="~/images/car.jpg" alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				<a href="#" class="btn btn-primary">Go somewhere</a>
-			</div>
-		</div>
-	</div>
-	<div class="col">
-		<div class="card" style="width: 25rem;">
-			<img class="card-img-top" src="~/images/car.jpg" alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				<a href="#" class="btn btn-primary">Go somewhere</a>
-			</div>
-		</div>
-	</div>
-</div>
+﻿@inject ProductService service
 
-<!-- home section -->
-<!--<section class="popular" id="popular">
-
-	<h1 class="heading">Популярни</h1>
-
+	<div class="jumbotron-fluid" style="background-image: url(../images/car.jpg); background-size: cover; background-repeat: no-repeat; height: 30vh;">
+	</div>
 	<div class="container">
-
-		<div class="row">
-			<div class="col-3">
-
-				<h3>Чип тунинг</h3>
-				<img class="img-fluid" src="images/chip-tuning.jpeg" alt="">
-				<p>Chip Tuning представлява в своята основа промяна на оригиналния софтуер на автомобила,в софтуера управляващ двигателя има редица параметри които се модифицират за да се получи качествения тунинг.</p>
-				<a href="#" class="btn">Прочети повече</a>
-			</div>
-
-			<div class="col-3">
-				<h3>Премахване на EGR клапан</h3>
-				<img class="img-thumbnail" src="images/egr.jpg" alt="">
-				<p>Рециркулация на изгорелите газове.</p>
-				<a href="#" class="btn">Прочети повече</a>
-			</div>
-
-			<div class="col-3">
-				<img class="img-thumbnail" src="images/kodirane.jpeg" alt="">
-				<h3>Кодиране и програмиране</h3>
-				<p>Предлагаме освен стандартната диагностика,Програмиране и Кодиране на екстри за немски автомобили‼️</p>
-				<a href="#" class="btn">Прочети повече</a>
-			</div>
+		<div class="row text-center p-5 align-items-center justify-content-center">
+			<h1>Най-популярни</h1>
+		</div>
+		<div class="row gy-3">
+			@foreach (Service service in service.GetServices())
+			{
+				<div class="col-4 align-self-center align-items-center">
+					<a>
+						<div class="card" style="height: 40vh">
+							<img class="img-fluid" src="~/@service.PhotoPath" style="height: 30vh" alt="Card image cap">
+							<div class="card-body text-center gy-3">
+								<h3 class="card-title">@service.Name</h3>
+							</div>
+						</div>
+					</a>
+				</div>
+			}
 		</div>
 
 	</div>
 
-</section>-->
+	<!-- home section -->
+	<!--<section class="popular" id="popular">
+
+		<h1 class="heading">Популярни</h1>
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-3">
+
+					<h3>Чип тунинг</h3>
+					<img class="img-fluid" src="images/chip-tuning.jpeg" alt="">
+					<p>Chip Tuning представлява в своята основа промяна на оригиналния софтуер на автомобила,в софтуера управляващ двигателя има редица параметри които се модифицират за да се получи качествения тунинг.</p>
+					<a href="#" class="btn">Прочети повече</a>
+				</div>
+
+				<div class="col-3">
+					<h3>Премахване на EGR клапан</h3>
+					<img class="img-thumbnail" src="images/egr.jpg" alt="">
+					<p>Рециркулация на изгорелите газове.</p>
+					<a href="#" class="btn">Прочети повече</a>
+				</div>
+
+				<div class="col-3">
+					<img class="img-thumbnail" src="images/kodirane.jpeg" alt="">
+					<h3>Кодиране и програмиране</h3>
+					<p>Предлагаме освен стандартната диагностика,Програмиране и Кодиране на екстри за немски автомобили‼️</p>
+					<a href="#" class="btn">Прочети повече</a>
+				</div>
+			</div>
+
+		</div>
+
+	</section>-->

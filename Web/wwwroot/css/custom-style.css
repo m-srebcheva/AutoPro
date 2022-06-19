@@ -33,10 +33,6 @@ body {
 	background: #eee;
 }
 
-section {
-	padding: 2rem 9%;
-}
-
 /*header section*/
 
 .nav-link {
@@ -160,7 +156,6 @@ section {
 	}
 
 .header .login-form {
-	position: absolute;
 	top: 110%;
 	right: -110%;
 	width: 35rem;
@@ -326,8 +321,11 @@ section {
 .footer {
 	background: #fff;
 	font-size: 15px;
+	position: relative;
+	bottom: 0;
+	left: 0;
 }
-
+/*
 	.footer .box-container {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -422,12 +420,12 @@ section {
 		padding-bottom: 10px;
 		border-style: double;
 	}
-
+*/
 
 
 
 /*column*/
-.container {
+/*.container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
@@ -459,7 +457,7 @@ section {
 		height: 350px;
 		margin-top: 25px;
 		margin-left: 150px;
-	}
+	}*/
 
 
 /*form - chas.html*/
@@ -470,7 +468,7 @@ section {
 }
 
 
-
+/*
 .container header {
 	position: relative;
 	font-size: 20px;
@@ -637,3 +635,4 @@ form .buttons {
 		border-style: double;
 		margin-left: 20px;
 	}
+*/
