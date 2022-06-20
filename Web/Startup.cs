@@ -29,6 +29,8 @@ namespace Web
 			services.AddControllersWithViews();
 			services.AddTransient<ProductService>();
 			services.AddTransient<UserService>();
+			services.AddTransient<AppointmentService>();
+			services.AddTransient<OrderService>();
 			services.AddDbContext<AutoProDbContext>(options =>
 				options.UseSqlServer(Configuration.GetConnectionString("Connection")));
 		}

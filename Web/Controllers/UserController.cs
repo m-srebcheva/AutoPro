@@ -100,5 +100,11 @@ namespace Web.Controllers
 
 			return RedirectToAction("Index", "Home");
 		}
+
+		[HttpGet]
+		public IActionResult Cart()
+		{
+			return View();
+		}
 	}
 }

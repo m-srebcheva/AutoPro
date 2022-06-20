@@ -1,0 +1,29 @@
+﻿<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-md-10 mx-auto">
+			<h2 style="color: rgb(52, 58, 64); text-indent: 10px" class="p-2">
+				Количка
+			</h2>
+			<div class="list-group list-group-flush pb-3">
+				@if (Logged.Cart.Count != 0)
+				{
+					@foreach (Service service in Logged.Cart)
+					{
+						<a asp-controller="Product" asp-action="Remove" asp-route-id="@service.Id" class="list-group-item list-group-item-action" style="font-size: 20px;">
+							@service.Name
+						</a>
+					}
+					<a asp-controller="Appointment" asp-action="Create">
+						<button class="btn btn-warning mt-5">
+							Checkout
+						</button>
+					</a>
+				}
+				else
+				{
+					<a class="list-group-item list-group-item-action">Количката е празна</a>
+				}
+			</div>
+		</div>
+	</div>
+</div>

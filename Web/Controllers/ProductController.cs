@@ -29,10 +29,30 @@ namespace Web.Controllers
 		[HttpGet]
 		public IActionResult AddToCart([FromRoute] string id)
 		{
-			Service service = this._productService.GetService(id);
-			Logged.Cart.Add(service);
+			if (Logged.IsLogged())
+			{
+				Service service = this._productService.GetService(id);
+				Logged.Cart.Add(service);
+			}
+			else
+			{
+				return RedirectToAction("Login", "User");
+			}
 
-			return RedirectToAction("Index", "HomeController");
+			return RedirectToAction("Cart", "User");
+		}
+
+
+		[HttpGet]
+		[Route("/product/remove/{id}")]
+		public IActionResult Remove([FromRoute] string id)
+		{
+			if (Logged.IsLogged())
+			{
+				Logged.Cart.Remove(Logged.Cart.FirstOrDefault(x => x.Id.ToString() == id));
+			}
+
+			return RedirectToAction("Cart", "User");
 		}
 	}
 }
